@@ -1,6 +1,78 @@
-
+body{
+    background-color: black;
+}
 
 .striked{
 text-decoration: line-through;
-color: lightgray;
+color: red
+}
+
+
+.box{
+    background-repeat:no-repeat;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiwaqXcD91v_GbgHzPGDHuE_DPPWt5fGRFww&usqp=CAU");
+    border: 1px solid black;
+    width: 50%;
+    height: 450px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(252, 240, 244);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    margin-top: 30px;
+}
+
+
+.in{
+    border-style: none;
+    text-align: center;
+    margin: 5px;
+    width: 65%;
+    height: 30px;
+    font-size: larger;
+    border-bottom: 2px solid gray;
+    
+}
+
+.in:focus{
+    outline: none;
+}
+
+.add{
+    border: none;
+    cursor: pointer;
+    size: 20px;
+    background-color: none;
+}
+
+#lists{
+    background-color: rgb(168, 223, 245);
+     width: 70%;
+     display: flex;
+     margin: 10px;
+     border-radius: 10px;
+     height: 35px;
+     
+    
+}
+
+.del{
+    border: transparent;
+    gap: 50%;
+    cursor: pointer;
+    height: 30px;
+    width: 40px;
+    background-color:transparent;
+}
+
+#lists:nth-child(4n+1){
+    background-color: rgb(245, 245, 197);
+}
+
+#lists:nth-child(4n+2){
+    background-color: rgb(247, 169, 169);
+}
+
+
+#lists:nth-child(4n+3){
+    background-color: rgb(170, 247, 170);
 }

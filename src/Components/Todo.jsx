@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import styles from "./Todo.css"
+import "./Todo.css"
 import TodoItem from './TodoItem'
+import { GrAdd } from 'react-icons/gr'
 const Todo = () => {
     const [todo, setTodo] = useState([]) //input value
     const [value, setValue] = useState("") // list  // when I set new todos my value lost so use this useState
@@ -13,14 +14,12 @@ const Todo = () => {
 
 
     return (
-        <div>
-
-            {todo.map((todo) => (
-                <TodoItem key={todo.id} todo={todo} onDelete={onDelete}></TodoItem>
-            ))}
+        <div className='box'>
 
 
-            <input placeholder='What needs to be done' value={value} onChange={(e) => setValue(e.target.value)}></input>
+
+
+            <input className='in' placeholder='What needs to be done' value={value} onChange={(e) => setValue(e.target.value)}></input>
 
             {/* <input placeholder='What needs to be done' value={value} onChange={(e) => setValue(e.target.value)}
                 onkey press--------------------------------
@@ -34,14 +33,16 @@ const Todo = () => {
             ></input> */}
 
 
-            <button style={{
+            <button className='add' style={{
                 marginLeft: "2%", borderRadius: "5px"
             }} onClick={() => {
-                setTodo([...todo, { id: Date.now() , value: value , isCompleted: false  }]);
+                setTodo([...todo, { id: Date.now(), value: value, isCompleted: false }]);
                 setValue("")
-            }}>ADD</button>
+            }}><GrAdd /></button>
 
-
+            {todo.map((todo) => (
+                <TodoItem key={todo.id} todo={todo} onDelete={onDelete}></TodoItem>
+            ))}
 
 
         </div>
